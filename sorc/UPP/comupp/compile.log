@@ -1,0 +1,870 @@
+**** Compiling UPP and all libs ****
+make[1]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp'
+Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib
+make[2]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib'
+/bin/cp crtm2.makefile crtm2/makefile
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/bacio/src =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/bacio/src'
+makefile:52: warning: overriding recipe for target `.f.o'
+../../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include bafrio.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include baciof.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include chk_endianc.f
+mpicc  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c   bacio.c
+mpicc  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c   byteswap.c
+ar ru  libbacio.a  bafrio.o baciof.o chk_endianc.o bacio.o byteswap.o
+ar: creating libbacio.a
+/bin/cp libbacio.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/bacio/src'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2 =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2'
+( cd src; echo "Making CRTM library in `pwd`" ; \
+  make FC="mpif90 -f90=ifort -free " FL="mpif90 -f90=ifort -free " FC_FLAGS="-c -fp-model source -ftz  -assume byterecl -convert big_endian  -O3 " FL_FLAGS="" install; \
+	\
+  /bin/cp lib/libCRTM.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib/libCRTM.a ; \
+  ln -sf `pwd`/include /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2 ; \
+)
+Making CRTM library in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src
+make[4]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src'
+test -d lib || mkdir lib
+make[5]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src'
+
+Making `all' in directory /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src/libsrc
+
+make[6]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src/libsrc'
+a - Type_Kinds.o
+a - File_Utility.o
+a - Message_Handler.o
+a - Date_Utility.o
+a - DateTime_Utility.o
+a - Timing_Utility.o
+a - Compare_Float_Numbers.o
+a - Endian_Utility.o
+a - Binary_File_Utility.o
+a - Sort_Utility.o
+a - Search_Utility.o
+a - String_Utility.o
+a - Fundamental_Constants.o
+a - Hyperbolic_Step.o
+a - Spectral_Units_Conversion.o
+a - UnitTest_Define.o
+a - SensorInfo_Parameters.o
+a - Subset_Define.o
+a - SpcCoeff_Define.o
+a - ACCoeff_Define.o
+a - NLTECoeff_Define.o
+a - SpcCoeff_Binary_IO.o
+a - ACCoeff_Binary_IO.o
+a - NLTECoeff_Binary_IO.o
+a - CloudCoeff_Define.o
+a - CloudCoeff_Binary_IO.o
+a - AerosolCoeff_Define.o
+a - AerosolCoeff_Binary_IO.o
+a - CRTM_Options_Define.o
+a - CRTM_AOD_Module.o
+a - IRwaterCoeff_Define.o
+a - SEcategory_Define.o
+a - LSEatlas_Define.o
+a - MWwaterCoeff_Define.o
+a - FitCoeff_Define.o
+a - MWwaterLUT_Define.o
+a - NESDIS_AMSRE_SICEEM_Module.o
+a - NESDIS_AMSRE_SNOWEM_Module.o
+a - NESDIS_AMSU_SICEEM_Module.o
+a - NESDIS_AMSU_SnowEM_Module.o
+a - NESDIS_MHS_SICEEM_Module.o
+a - NESDIS_MHS_SnowEM_Module.o
+a - NESDIS_LandEM_Module.o
+a - NESDIS_SEAICE_PHYEM_MODULE.o
+a - NESDIS_SnowEM_Parameters.o
+a - NESDIS_SSMI_Module.o
+a - NESDIS_SSMI_SIceEM_Module.o
+a - NESDIS_SSMI_SnowEM_Module.o
+a - NESDIS_SSMIS_SeaIceEM_Module.o
+a - NESDIS_SSMIS_SnowEM_Module.o
+a - NESDIS_SnowEM_ATMS_Parameters.o
+a - NESDIS_ATMS_SnowEM_Module.o
+a - CRTM_Utility.o
+a - CRTM_Interpolation.o
+a - CRTM_SpcCoeff.o
+a - CRTM_TauCoeff.o
+a - TauCoeff_Define.o
+a - CRTM_AerosolCoeff.o
+a - CRTM_CloudCoeff.o
+a - CRTM_IRlandCoeff.o
+a - CRTM_IRwaterCoeff.o
+a - CRTM_IRsnowCoeff.o
+a - CRTM_IRiceCoeff.o
+a - CRTM_VISlandCoeff.o
+a - CRTM_VISwaterCoeff.o
+a - CRTM_VISsnowCoeff.o
+a - CRTM_VISiceCoeff.o
+a - CRTM_MWwaterCoeff.o
+a - CRTM_Atmosphere_Define.o
+a - CRTM_Cloud_Define.o
+a - CRTM_Aerosol_Define.o
+a - CRTM_Surface_Define.o
+a - CRTM_SensorData_Define.o
+a - CRTM_SensorInfo.o
+a - CRTM_ChannelInfo_Define.o
+a - CRTM_Geometry_Define.o
+a - CRTM_GeometryInfo_Define.o
+a - CRTM_GeometryInfo.o
+a - CRTM_Atmosphere.o
+a - iAtm_Define.o
+a - CRTM_Model_Profiles.o
+a - CRTM_AerosolScatter.o
+a - ASvar_Define.o
+a - CRTM_CloudScatter.o
+a - CSvar_Define.o
+a - CRTM_MoleculeScatter.o
+a - CRTM_SfcOptics_Define.o
+a - CRTM_SfcOptics.o
+a - CRTM_IR_Land_SfcOptics.o
+a - CRTM_IR_Water_SfcOptics.o
+a - CRTM_IR_Snow_SfcOptics.o
+a - CRTM_IR_Ice_SfcOptics.o
+a - CRTM_MW_Land_SfcOptics.o
+a - CRTM_MW_Water_SfcOptics.o
+a - CRTM_MW_Snow_SfcOptics.o
+a - CRTM_MW_Ice_SfcOptics.o
+a - CRTM_VIS_Land_SfcOptics.o
+a - CRTM_VIS_Water_SfcOptics.o
+a - CRTM_VIS_Snow_SfcOptics.o
+a - CRTM_VIS_Ice_SfcOptics.o
+a - CRTM_SEcategory.o
+a - CRTM_LowFrequency_MWSSEM.o
+a - CRTM_Fastem1.o
+a - CRTM_FastemX.o
+a - Reflection_Correction_Module.o
+a - Azimuth_Emissivity_Module.o
+a - Azimuth_Emissivity_F6_Module.o
+a - Small_Scale_Correction_Module.o
+a - Large_Scale_Correction_Module.o
+a - Foam_Utility_Module.o
+a - Slope_Variance.o
+a - Guillou.o
+a - Ellison.o
+a - Liu.o
+a - Fresnel.o
+a - CRTM_IRSSEM.o
+a - CRTM_AtmOptics.o
+a - CRTM_AtmOptics_Define.o
+a - AOvar_Define.o
+a - CRTM_Planck_Functions.o
+a - RTV_Define.o
+a - SOI_Module.o
+a - ADA_Module.o
+a - Emission_Module.o
+a - CRTM_RTSolution_Define.o
+a - Common_RTSolution.o
+a - CRTM_RTSolution.o
+a - CRTM_AntennaCorrection.o
+a - CRTM_AncillaryInput_Define.o
+a - SSU_Input_Define.o
+a - Zeeman_Input_Define.o
+a - CRTM_Parameters.o
+a - CRTM_LifeCycle.o
+a - CRTM_Forward_Module.o
+a - CRTM_Tangent_Linear_Module.o
+a - CRTM_Adjoint_Module.o
+a - CRTM_K_Matrix_Module.o
+a - CRTM_AtmAbsorption.o
+a - CRTM_Predictor.o
+a - CRTM_Predictor_Define.o
+a - ODAS_AtmAbsorption.o
+a - ODAS_Predictor.o
+a - ODAS_Predictor_Define.o
+a - ODAS_Binary_IO.o
+a - ODAS_Define.o
+a - ODAS_TauCoeff.o
+a - ODPS_AtmAbsorption.o
+a - ODPS_Predictor.o
+a - ODPS_Predictor_Define.o
+a - PAFV_Define.o
+a - ODPS_Binary_IO.o
+a - ODPS_Define.o
+a - ODPS_TauCoeff.o
+a - CRTM_GeometryInfo.o
+a - ODSSU_AtmAbsorption.o
+a - ODSSU_Define.o
+a - ODSSU_Binary_IO.o
+a - ODSSU_TauCoeff.o
+a - Profile_Utility_Parameters.o
+a - ODPS_CoordinateMapping.o
+a - ODZeeman_TauCoeff.o
+a - ODZeeman_AtmAbsorption.o
+a - ODZeeman_Predictor.o
+a - Zeeman_Utility.o
+a - CRTM_NLTECorrection.o
+a - NLTE_Parameters.o
+a - NLTE_Predictor_Define.o
+a - NLTE_Predictor_IO.o
+a - CRTM_Module.o
+make[6]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src/libsrc'
+
+Returning to directory /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src
+
+make[5]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src'
+
+Installing libCRTM.a in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src/lib
+
+test -d include || mkdir include
+
+Installing *.mod in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src/include
+
+make[4]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2/src'
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/crtm2'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/ip =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/ip'
+makefile:101: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+makefile:103: warning: overriding recipe for target `.f90.o'
+../../../configure.upp:114: warning: ignoring old recipe for target `.f90.o'
+makefile:105: warning: overriding recipe for target `.F90.o'
+../../../configure.upp:121: warning: ignoring old recipe for target `.F90.o'
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gausslat.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzd00_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzd01_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzd03_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzd04_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzd05_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzdcb_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzdcd_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdswzd_mod.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ijkgds0.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ijkgds1.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ipolates.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ipolatev.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ipxwafs2.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ipxwafs3.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ipxwafs.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include makgds.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include movect.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polates0.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polates1.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polates2.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polates3.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polates4.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polates6.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polatev0.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polatev1.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polatev2.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polatev3.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polatev4.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polatev6.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polfixs.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include polfixv.f90
+ar ru  libip.a gausslat.o gdswzd00_mod.o gdswzd01_mod.o gdswzd03_mod.o gdswzd04_mod.o gdswzd05_mod.o gdswzdcb_mod.o gdswzdcd_mod.o gdswzd_mod.o ijkgds0.o ijkgds1.o ipolates.o ipolatev.o ipxwafs2.o ipxwafs3.o ipxwafs.o makgds.o movect.o polates0.o polates1.o polates2.o polates3.o polates4.o polates6.o polatev0.o polatev1.o polatev2.o polatev3.o polatev4.o polatev6.o polfixs.o polfixv.o
+ar: creating libip.a
+/bin/cp libip.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/ip'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sfcio =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sfcio'
+makefile:45: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sfcio_module.f
+ar ru  libsfcio.a sfcio_module.o
+ar: creating libsfcio.a
+/bin/cp libsfcio.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sfcio'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sigio =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sigio'
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sigio_module.f sigio_r_module.f
+mpif90 -f90=ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include bafrio.f
+ar ru  libsigio.a sigio_module.o sigio_r_module.o bafrio.o
+ar: creating libsigio.a
+/bin/cp libsigio.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sigio'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sp =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sp'
+makefile:63: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+makefile:66: warning: overriding recipe for target `.F.o'
+../../../configure.upp:117: warning: ignoring old recipe for target `.F.o'
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include bll2ps.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spanaly.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spdz2uv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include speps.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spfft1.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spffte.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spfft.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spfftpt.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spgradq.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spgradx.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spgrady.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include splaplac.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include splegend.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sppad.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spsynth.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptezd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptez.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptezmd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptezm.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptezmv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptezv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgpmd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgpm.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgpmv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgpsd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgps.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgpsv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgptd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgpt.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgptsd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgptvd.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptgptv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrand.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptran.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptranf0.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptranf1.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptranf.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptranfv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptranv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrund.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrun.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrung.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrungv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrunl.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrunm.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrunmv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptruns.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrunsv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sptrunv.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spuv2dz.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spvar.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include spwget.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN splat.F > splat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include splat.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN ncpus.F > ncpus.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ncpus.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN lapack_gen.F > lapack_gen.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include lapack_gen.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN fftpack.F > fftpack.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include fftpack.f
+ar ru  libsp.a bll2ps.o spanaly.o spdz2uv.o speps.o spfft1.o spffte.o spfft.o spfftpt.o spgradq.o spgradx.o spgrady.o splaplac.o splegend.o sppad.o spsynth.o sptezd.o sptez.o sptezmd.o sptezm.o sptezmv.o sptezv.o sptgpmd.o sptgpm.o sptgpmv.o sptgpsd.o sptgps.o sptgpsv.o sptgptd.o sptgpt.o sptgptsd.o sptgptvd.o sptgptv.o sptrand.o sptran.o sptranf0.o sptranf1.o sptranf.o sptranfv.o sptranv.o sptrund.o sptrun.o sptrung.o sptrungv.o sptrunl.o sptrunm.o sptrunmv.o sptruns.o sptrunsv.o sptrunv.o spuv2dz.o spvar.o spwget.o splat.o ncpus.o lapack_gen.o fftpack.o
+ar: creating libsp.a
+/bin/cp libsp.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/sp'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/w3emc =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/w3emc'
+makefile:57: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fa09.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fb06.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fb11.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbens.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include mova2i.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgbens.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include start.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include summary.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3log.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include mersenne_twister.f
+ar ru libw3emc.a w3fa09.o w3fb06.o w3fb11.o getgbens.o mova2i.o putgbens.o start.o summary.o w3log.o mersenne_twister.o
+ar: creating libw3emc.a
+/bin/cp libw3emc.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/w3emc'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/w3nco =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/w3nco'
+makefile:62: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include errexit.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include errmsg.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include fparsei.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include fparser.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getbit.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb1r.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb1re.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb1s.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbe.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbeh.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbem.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbemh.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbemp.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbep.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbex.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbexm.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbh.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbm.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbmh.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbmp.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgbp.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgi.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgir.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include idsdef.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include instrument.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include iw3jdn.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ixgb.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include lengds.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include pdsens.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include pdseup.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgb.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgbe.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgben.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgbex.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgbn.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include r63w72.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include skgb.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3difdat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3doxdat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi01.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi58.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi59.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi63.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi68.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi71.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi72.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi73.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi74.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi75.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi76.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi82.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fi83.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fs21.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3fs26.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3locdat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3movdat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3reddat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3tagb.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3utcdat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include w3valdat.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gbytesc.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gbytec.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sbytesc.f
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include sbytec.f
+ar ru libw3nco.a errexit.o errmsg.o fparsei.o fparser.o getbit.o getgb.o getgb1r.o getgb1re.o getgb1s.o getgbe.o getgbeh.o getgbem.o getgbemh.o getgbemp.o getgbep.o getgbex.o getgbexm.o getgbh.o getgbm.o getgbmh.o getgbmp.o getgbp.o getgi.o getgir.o idsdef.o instrument.o iw3jdn.o ixgb.o lengds.o pdsens.o pdseup.o putgb.o putgbe.o putgben.o putgbex.o putgbn.o r63w72.o skgb.o w3difdat.o w3doxdat.o w3fi01.o w3fi58.o w3fi59.o w3fi63.o w3fi68.o w3fi71.o w3fi72.o w3fi73.o w3fi74.o w3fi75.o w3fi76.o w3fi82.o w3fi83.o w3fs21.o w3fs26.o w3locdat.o w3movdat.o w3reddat.o w3tagb.o w3utcdat.o w3valdat.o gbytesc.o gbytec.o sbytesc.o sbytec.o
+ar: creating libw3nco.a
+/bin/cp libw3nco.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/w3nco'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/nemsio =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/nemsio'
+makefile:52: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+makefile:54: warning: overriding recipe for target `.f90.o'
+../../../configure.upp:114: warning: ignoring old recipe for target `.f90.o'
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I../wrfmpi_stubs nemsio_openclose.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I../wrfmpi_stubs nemsio_read.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I../wrfmpi_stubs nemsio_write.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I../wrfmpi_stubs nemsio_module.f90
+mpif90 -f90=ifort -free  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I../wrfmpi_stubs nemsio_module_mpi.f90
+ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I../wrfmpi_stubs bafrio.f
+ar ru  libnemsio.a nemsio_openclose.o nemsio_read.o nemsio_write.o nemsio_module.o nemsio_module_mpi.o bafrio.o  
+ar: creating libnemsio.a
+/bin/cp libnemsio.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/nemsio'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/gfsio =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/gfsio'
+makefile:54: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+makefile:56: warning: overriding recipe for target `.F.o'
+../../../configure.upp:117: warning: ignoring old recipe for target `.F.o'
+ifort -free -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gfsio_module.f
+ar ru  libgfsio.a gfsio_module.o  
+ar: creating libgfsio.a
+/bin/cp libgfsio.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/gfsio'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/g2 =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/g2'
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gridtemplates.f
+ar ru  libg2.a gridtemplates.o
+ar: creating libg2.a
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include pdstemplates.f
+ar ru  libg2.a pdstemplates.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include drstemplates.f
+ar ru  libg2.a drstemplates.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gribmod.f
+ar ru  libg2.a gribmod.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include realloc.f
+ar ru  libg2.a realloc.o
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -DUSE_JPEG2000 addfield.F addfield.f
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include addfield.f
+ar ru  libg2.a addfield.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include addgrid.f
+ar ru  libg2.a addgrid.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include addlocal.f
+ar ru  libg2.a addlocal.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getfield.f
+ar ru  libg2.a getfield.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gb_info.f
+ar ru  libg2.a gb_info.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_getfld.f
+ar ru  libg2.a gf_getfld.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_free.f
+ar ru  libg2.a gf_free.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack1.f
+ar ru  libg2.a gf_unpack1.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack2.f
+ar ru  libg2.a gf_unpack2.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack3.f
+ar ru  libg2.a gf_unpack3.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack4.f
+ar ru  libg2.a gf_unpack4.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack5.f
+ar ru  libg2.a gf_unpack5.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack6.f
+ar ru  libg2.a gf_unpack6.o
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -DUSE_JPEG2000 gf_unpack7.F gf_unpack7.f
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gf_unpack7.f
+ar ru  libg2.a gf_unpack7.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gettemplates.f
+ar ru  libg2.a gettemplates.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getlocal.f
+ar ru  libg2.a getlocal.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getdim.f
+ar ru  libg2.a getdim.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getpoly.f
+ar ru  libg2.a getpoly.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gribcreate.f
+ar ru  libg2.a gribcreate.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gribend.f
+ar ru  libg2.a gribend.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gribinfo.f
+ar ru  libg2.a gribinfo.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include mkieee.f
+ar ru  libg2.a mkieee.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include rdieee.f
+ar ru  libg2.a rdieee.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include intmath.f
+ar ru  libg2.a intmath.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include simpack.f
+ar ru  libg2.a simpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include simunpack.f
+ar ru  libg2.a simunpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include cmplxpack.f
+ar ru  libg2.a cmplxpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include compack.f
+ar ru  libg2.a compack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include misspack.f
+ar ru  libg2.a misspack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include pack_gp.f
+ar ru  libg2.a pack_gp.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include reduce.f
+ar ru  libg2.a reduce.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include comunpack.f
+ar ru  libg2.a comunpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include specpack.f
+ar ru  libg2.a specpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include specunpack.f
+ar ru  libg2.a specunpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include jpcpack.f
+ar ru  libg2.a jpcpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include jpcunpack.f
+ar ru  libg2.a jpcunpack.o
+mpicc  -c -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/usr/include enc_jpeg2000.c
+ar ru  libg2.a enc_jpeg2000.o
+mpicc  -c -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/usr/include dec_jpeg2000.c
+ar ru  libg2.a dec_jpeg2000.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include pngpack.f
+ar ru  libg2.a pngpack.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include pngunpack.f
+ar ru  libg2.a pngunpack.o
+mpicc  -c -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/usr/include enc_png.c
+ar ru  libg2.a enc_png.o
+mpicc  -c -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/usr/include dec_png.c
+ar ru  libg2.a dec_png.o
+mpicc  -c -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/usr/include mova2i.c
+ar ru  libg2.a mova2i.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gbytesc.f
+ar ru  libg2.a gbytesc.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include skgb.f
+ar ru  libg2.a skgb.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include ixgb2.f
+ar ru  libg2.a ixgb2.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getidx.f
+ar ru  libg2.a getidx.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getidxes.f
+ar ru  libg2.a getidxes.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getg2i.f
+ar ru  libg2.a getg2i.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getg2ir.f
+ar ru  libg2.a getg2ir.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb2s.f
+ar ru  libg2.a getgb2s.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb2r.f
+ar ru  libg2.a getgb2r.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb2l.f
+ar ru  libg2.a getgb2l.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb2.f
+ar ru  libg2.a getgb2.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb2p.f
+ar ru  libg2.a getgb2p.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include getgb2rp.f
+ar ru  libg2.a getgb2rp.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include putgb2.f
+ar ru  libg2.a putgb2.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include g2grids.f
+ar ru  libg2.a g2grids.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdt2gds.f
+ar ru  libg2.a gdt2gds.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include params.f
+ar ru  libg2.a params.o
+mpif90 -f90=ifort -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include params_ecmwf.f
+ar ru  libg2.a params_ecmwf.o
+/bin/cp libg2.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/g2'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/g2tmpl =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/g2tmpl'
+makefile:41: warning: overriding recipe for target `.f.o'
+../../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+mpicc  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c  process_4dot2.c
+ifort -free -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include grib2_all_tables_module.f
+ifort -free -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include gdtsec3.f
+ifort -free -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include g2sec4_temp1.f
+ifort -free -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include g2sec4_temp11.f
+ifort -free -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include g2sec4_temp12.f
+ar ru  libg2tmpl.a process_4dot2.o grib2_all_tables_module.o gdtsec3.o g2sec4_temp1.o g2sec4_temp11.o g2sec4_temp12.o
+ar: creating libg2tmpl.a
+/bin/cp libg2tmpl.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/g2tmpl'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/xml =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/xml'
+makefile:42: warning: overriding recipe for target `.f90.o'
+../../../configure.upp:114: warning: ignoring old recipe for target `.f90.o'
+mpif90 -f90=ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -O2 xmlparse.f90
+mpif90 -f90=ifort -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -O2 read_xml_prims.f90
+ar ru libxmlparse.a xmlparse.o read_xml_prims.o
+ar: creating libxmlparse.a
+/bin/cp *.mod  /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+/bin/cp libxmlparse.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib 
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/xml'
+
+===== Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/wrf_io =====
+make[3]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/wrf_io'
+makefile:102: warning: overriding recipe for target `.f90.o'
+../../../configure.upp:114: warning: ignoring old recipe for target `.f90.o'
+makefile:106: warning: overriding recipe for target `.c.o'
+../../../configure.upp:108: warning: ignoring old recipe for target `.c.o'
+make io_only
+make[4]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/wrf_io'
+makefile:102: warning: overriding recipe for target `.f90.o'
+../../../configure.upp:114: warning: ignoring old recipe for target `.f90.o'
+makefile:106: warning: overriding recipe for target `.c.o'
+../../../configure.upp:108: warning: ignoring old recipe for target `.c.o'
+grep nf_format_64bit /apps/netcdf/4.6.1/intel/16.1.150/include/netcdf.inc ;\
+                a=$? ; export a ; \
+	if [ $a -a "$WRFIO_NCD_LARGE_FILE_SUPPORT" = "1" ] ; then \
+                  /lib/cpp -P -nostdinc -traditional-cpp  -DWRFIO_NCD_LARGE_FILE_SUPPORT wrf_io.F90 | m4 -Uinclude -Uindex -Ulen - > wrf_io.f ; \
+                else \
+                  /lib/cpp -P -nostdinc -traditional-cpp  wrf_io.F90 | m4 -Uinclude -Uindex -Ulen - > wrf_io.f ; \
+                fi
+      integer nf_format_64bit
+      parameter (nf_format_64bit = 2)
+ifort -free  -O3  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -w -o wrf_io.o -O3  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -I/apps/netcdf/4.6.1/intel/16.1.150/include -c wrf_io.f
+/lib/cpp -P -nostdinc -traditional-cpp  field_routines.F90 > field_routines.f
+ifort -free  -O3  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -w -o field_routines.o -O3  -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -I/apps/netcdf/4.6.1/intel/16.1.150/include -c field_routines.f
+/bin/rm -f libwrfio_nf.a
+ar cr libwrfio_nf.a wrf_io.o field_routines.o ; \
+	ranlib libwrfio_nf.a
+make[4]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/wrf_io'
+/bin/cp *.a /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib
+/bin/cp *.mod /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include
+wrf build started:   Wed Feb 21 22:31:55 EST 2024
+wrf build completed: Wed Feb 21 22:31:55 EST 2024
+make[3]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/wrf_io'
+make[2]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib'
+Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/unipost
+make[2]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/unipost'
+makefile:119: warning: overriding recipe for target `.F.o'
+../../configure.upp:117: warning: ignoring old recipe for target `.F.o'
+makefile:123: warning: overriding recipe for target `.f.o'
+../../configure.upp:111: warning: ignoring old recipe for target `.f.o'
+makefile:126: warning: overriding recipe for target `.f90.o'
+../../configure.upp:114: warning: ignoring old recipe for target `.f90.o'
+makefile:129: warning: overriding recipe for target `.c.o'
+../../configure.upp:108: warning: ignoring old recipe for target `.c.o'
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include wrf_io_flags.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include getVariable.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include getIVariableN.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  kinds_mod.F > kinds_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include kinds_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include machine.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include physcons.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include native_endianness.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include retrieve_index.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include ZENSUN.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CLDFRAC_ZHAO.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  GFSPOST.F > GFSPOST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GFSPOST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GETGBANDSCATTER.f
+mpicc  -c -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -Dfunder -DFortranByte=char -DFortranInt=int -DFortranLlong='long long' blockIO.c
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include VRBLS2D_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include VRBLS3D_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include VRBLS4D_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MASKS_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include PMICRPH.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SOIL_mod.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CMASSI.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CTLBLK.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GRIDSPEC.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include LOOKUP.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include PARAMR.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include RHGRD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include RQSTFLD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include xml_perl_data.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include cuparm.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  params.F > params.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include params.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include svptbl.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include get_postfilename.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include grib2_module.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SET_LVLSXML.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include FILL_PSETFLD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include BNDLYR.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include BOUND.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALCAPE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALDWP.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALDRG.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALHEL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALLCL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALMCVG.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALPOT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALPW.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALRH.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALRCH.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALRH_GSD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALSTRM.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALTAU.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALTHTE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALVIS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALVIS_GSD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALVOR.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALWXT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALWXT_RAMER.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALWXT_BOURG.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALWXT_REVISED.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALRH_PW.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALWXT_EXPLICIT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALWXT_DOMINANT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CLDRAD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CLMAX.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include COLLECT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include COLLECT_LOC.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include DEWPOINT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include FDLVL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include FGAMMA.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include FIXED.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include FRZLVL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include FRZLVL2.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GET_BITS.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  GRIBIT.F > GRIBIT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GRIBIT.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  INITPOST.F > INITPOST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include LFMFLD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MAPSSLP.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MISCLN.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MIXLEN.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MDL2P.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include ETAMP_Q2F.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MDLFLD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MPI_FIRST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MPI_LAST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include NGMFLD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include NGMSLP.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include OTLFT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include OTLIFT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SLP_new.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SLP_NMM.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include EXCH.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include PARA_RANGE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include PROCESS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_NMM.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include EXCH2.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include READCNTRL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include READ_xml.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SET_OUTFLDS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SCLFLD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SERVER.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SETUP_SERVERS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SMOOTH.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SURFCE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SPLINE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include TABLE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include TABLEQ.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include TRPAUS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include TTBLEX.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include WETBULB.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include WRFPOST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALMICT.f
+/lib/cpp -P -traditional-cpp -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  MICROINIT.F > MICROINIT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MICROINIT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GPVS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MDL2SIGMA.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include ETCALC.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CANRES.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALGUST.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include WETFRZLVL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SNFRAC.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MDL2AGL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SNFRAC_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include AVIATION.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include DEALLOCATE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALPBL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MDL2SIGMA2.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALRH_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include LFMFLD_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALRAD_WCLOUD_newcrtm.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MDL2THANDPV.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALPBLREGIME.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include POLEAVG.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_NEMS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GETNEMSNDSCATTER.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include ICAOHEIGHT.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_GFS_NEMS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GEO_ZENITH_ANGLE.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GFIP3.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include GRIDAVG.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include CALUPDHEL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include MSFPS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_GFS_SIGIO.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include AllGETHERV_GSD.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include SELECT_CHANNELS.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include ALLOCATE_ALL.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_NEMS_MPIIO.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include ASSIGNNEMSIOVAR.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_GFS_NEMS_MPIIO.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include INITPOST_NETCDF.f
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include gtg_ctlblk.f90
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include gtg_indices.f90
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include gtg_filter.f90
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include gtg_compute.f90
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include gtg_config.f90
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include map_routines.f90
+mpif90 -f90=ifort -free   -c -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include -I/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/include/crtm2  -I/apps/netcdf/4.6.1/intel/16.1.150/include gtg_algo.f90
+mpif90 -f90=ifort -free  -o unipost.exe -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3   VRBLS2D_mod.o VRBLS3D_mod.o VRBLS4D_mod.o MASKS_mod.o PMICRPH.o SOIL_mod.o CMASSI.o CTLBLK.o GRIDSPEC.o LOOKUP.o PARAMR.o RHGRD.o RQSTFLD.o xml_perl_data.o cuparm.o params.o svptbl.o get_postfilename.o grib2_module.o SET_LVLSXML.o FILL_PSETFLD.o BNDLYR.o  BOUND.o  CALCAPE.o CALDWP.o  CALDRG.o CALHEL.o  CALLCL.o  CALMCVG.o CALPOT.o  CALPW.o CALRH.o  CALRCH.o CALRH_GSD.o CALSTRM.o CALTAU.o CALTHTE.o CALVIS.o CALVIS_GSD.o CALVOR.o CALWXT.o  CALWXT_RAMER.o CALWXT_BOURG.o CALWXT_REVISED.o CALRH_PW.o CALWXT_EXPLICIT.o CALWXT_DOMINANT.o CLDRAD.o CLMAX.o COLLECT.o  COLLECT_LOC.o DEWPOINT.o FDLVL.o  FGAMMA.o FIXED.o  FRZLVL.o  FRZLVL2.o GET_BITS.o  GRIBIT.o INITPOST.o LFMFLD.o  MAPSSLP.o MISCLN.o MIXLEN.o MDL2P.o ETAMP_Q2F.o MDLFLD.o MPI_FIRST.o  MPI_LAST.o NGMFLD.o NGMSLP.o  OTLFT.o OTLIFT.o SLP_new.o SLP_NMM.o EXCH.o PARA_RANGE.o PROCESS.o INITPOST_NMM.o EXCH2.o READCNTRL.o  READ_xml.o SET_OUTFLDS.o SCLFLD.o  SERVER.o SETUP_SERVERS.o SMOOTH.o SURFCE.o SPLINE.o  TABLE.o  TABLEQ.o  TRPAUS.o  TTBLEX.o WETBULB.o WRFPOST.o CALMICT.o MICROINIT.o GPVS.o MDL2SIGMA.o ETCALC.o CANRES.o CALGUST.o WETFRZLVL.o SNFRAC.o MDL2AGL.o SNFRAC_GFS.o AVIATION.o DEALLOCATE.o CALPBL.o MDL2SIGMA2.o INITPOST_GFS.o CALRH_GFS.o LFMFLD_GFS.o CALRAD_WCLOUD_newcrtm.o MDL2THANDPV.o CALPBLREGIME.o POLEAVG.o INITPOST_NEMS.o GETNEMSNDSCATTER.o ICAOHEIGHT.o INITPOST_GFS_NEMS.o GEO_ZENITH_ANGLE.o GFIP3.o GRIDAVG.o CALUPDHEL.o MSFPS.o INITPOST_GFS_SIGIO.o AllGETHERV_GSD.o SELECT_CHANNELS.o ALLOCATE_ALL.o INITPOST_NEMS_MPIIO.o ASSIGNNEMSIOVAR.o INITPOST_GFS_NEMS_MPIIO.o INITPOST_NETCDF.o gtg_ctlblk.o gtg_indices.o gtg_filter.o gtg_compute.o gtg_config.o map_routines.o gtg_algo.o  wrf_io_flags.o getVariable.o getIVariableN.o kinds_mod.o machine.o physcons.o native_endianness.o retrieve_index.o ZENSUN.o CLDFRAC_ZHAO.o GFSPOST.o GETGBANDSCATTER.o blockIO.o  -Wl,-noinhibit-exec  -L/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib -lnemsio -lsigio -lsfcio -lgfsio -lsp -lw3nco -lw3emc -lbacio -lCRTM  -lg2 -lg2tmpl -lxmlparse -L/usr/lib64 -lpng -lz -ljasper -L/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/lib/wrf_io -lwrfio_nf   -L/apps/netcdf/4.6.1/intel/16.1.150/lib -lnetcdff -lnetcdf 
+/bin/cp unipost.exe /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/bin
+make[2]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/unipost'
+Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/copygb
+make[2]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/copygb'
+ifort -o copygb.exe copygb.f ../unipost/kinds_mod.o -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3   -Wl,-noinhibit-exec  -L/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib -lip -lbacio -lsp -lw3nco -lw3emc 
+/bin/cp copygb.exe /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/bin
+make[2]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/copygb'
+Making all in /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/ndate
+make[2]: Entering directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/ndate'
+ifort -o ndate.exe ndate.f -fp-model source -ftz -assume byterecl -convert big_endian -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3   -Wl,-noinhibit-exec   /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/lib/libw3nco.a
+/bin/cp ndate.exe /scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/bin
+make[2]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp/src/ndate'
+make[1]: Leaving directory `/scratch2/AOML/aoml-hafs1/Sundararaman.G.Gopalakrishnan/IOLAV1.2/sorc/UPP/comupp'

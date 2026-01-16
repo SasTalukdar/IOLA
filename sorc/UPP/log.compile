@@ -1,0 +1,1158 @@
+**** Compiling UPP and all libs ****
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib'
+/bin/cp crtm2.makefile crtm2/makefile
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/bacio/src =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/bacio/src'
+makefile:52: warning: overriding recipe for target '.f.o'
+../../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include bafrio.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include baciof.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include chk_endianc.f
+mpicc   -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c   bacio.c
+mpicc   -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c   byteswap.c
+ar ru   libbacio.a  bafrio.o baciof.o chk_endianc.o bacio.o byteswap.o
+ar: creating libbacio.a
+/bin/cp libbacio.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/bacio/src'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2 =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2'
+( cd src; echo "Making CRTM library in `pwd`" ; \
+  make FC="mpif90 -f90=ifort -free " FL="mpif90 -f90=ifort -free " FC_FLAGS="-c -fp-model precise -ftz  -assume byterecl -convert big_endian   -O3 " FL_FLAGS="" install; \
+	\
+  /bin/cp lib/libCRTM.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib/libCRTM.a ; \
+  ln -sf `pwd`/include /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2 ; \
+)
+Making CRTM library in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src
+make[3]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src'
+test -d lib || mkdir lib
+make[4]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src'
+
+Making `all' in directory /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src/libsrc
+
+make[5]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src/libsrc'
+a - Type_Kinds.o
+a - File_Utility.o
+a - Message_Handler.o
+a - Date_Utility.o
+a - Compare_Float_Numbers.o
+a - Endian_Utility.o
+a - Binary_File_Utility.o
+a - Sort_Utility.o
+a - Search_Utility.o
+a - Fundamental_Constants.o
+a - Spectral_Units_Conversion.o
+a - SensorInfo_Parameters.o
+a - AntCorr_Define.o
+a - AntCorr_Binary_IO.o
+a - SpcCoeff_Define.o
+a - SpcCoeff_Binary_IO.o
+a - CloudCoeff_Define.o
+a - CloudCoeff_Binary_IO.o
+a - AerosolCoeff_Define.o
+a - AerosolCoeff_Binary_IO.o
+a - EmisCoeff_Define.o
+a - EmisCoeff_Binary_IO.o
+a - BeCoeff_Define.o
+a - BeCoeff_Binary_IO.o
+a - NESDIS_AMSRE_SICEEM_Module.o
+a - NESDIS_AMSRE_SNOWEM_Module.o
+a - NESDIS_AMSU_SICEEM_Module.o
+a - NESDIS_AMSU_SnowEM_Module.o
+a - NESDIS_MHS_SICEEM_Module.o
+a - NESDIS_MHS_SnowEM_Module.o
+a - NESDIS_LandEM_Module.o
+a - NESDIS_OCEANEM_Module.o
+a - NESDIS_SEAICE_PHYEM_MODULE.o
+a - NESDIS_SnowEM_Parameters.o
+a - NESDIS_SSMI_Module.o
+a - NESDIS_SSMI_SIceEM_Module.o
+a - NESDIS_SSMI_SnowEM_Module.o
+a - NESDIS_SSMIS_SeaIceEM_Module.o
+a - NESDIS_SSMIS_SnowEM_Module.o
+a - CRTM_Utility.o
+a - CRTM_Interpolation.o
+a - CRTM_SpcCoeff.o
+a - CRTM_TauCoeff.o
+a - TauCoeff_Define.o
+a - CRTM_AerosolCoeff.o
+a - CRTM_CloudCoeff.o
+a - CRTM_EmisCoeff.o
+a - CRTM_BeCoeff.o
+a - CRTM_Atmosphere_Define.o
+a - CRTM_Cloud_Define.o
+a - CRTM_Aerosol_Define.o
+a - CRTM_Atmosphere_IO.o
+a - CRTM_Cloud_IO.o
+a - CRTM_Aerosol_IO.o
+a - CRTM_Surface_Define.o
+a - CRTM_SensorData_Define.o
+a - CRTM_Surface_IO.o
+a - CRTM_SensorData_IO.o
+a - CRTM_SensorInfo.o
+a - CRTM_ChannelInfo_Define.o
+a - CRTM_Geometry_Define.o
+a - CRTM_Geometry_IO.o
+a - CRTM_GeometryInfo_Define.o
+a - CRTM_GeometryInfo.o
+a - CRTM_Atmosphere.o
+a - iAtm_Define.o
+a - CRTM_Model_Profiles.o
+a - CRTM_AtmAbsorption.o
+a - CRTM_AtmScatter_Define.o
+a - CRTM_AerosolScatter.o
+a - ASvar_Define.o
+a - CRTM_CloudScatter.o
+a - CSvar_Define.o
+a - CRTM_MoleculeScatter.o
+a - CRTM_SfcOptics_Define.o
+a - CRTM_SfcOptics.o
+a - CRTM_IR_Ice_SfcOptics.o
+a - CRTM_IR_Land_SfcOptics.o
+a - CRTM_IR_Snow_SfcOptics.o
+a - CRTM_IR_Water_SfcOptics.o
+a - CRTM_MW_Ice_SfcOptics.o
+a - CRTM_MW_Land_SfcOptics.o
+a - CRTM_MW_Snow_SfcOptics.o
+a - CRTM_MW_Water_SfcOptics.o
+a - CRTM_VIS_Water_SfcOptics.o
+a - CRTM_LowFrequency_MWSSEM.o
+a - Ocean_Permittivity.o
+a - Fresnel.o
+a - CRTM_Fastem1.o
+a - CRTM_Fastem3.o
+a - CRTM_IRSSEM.o
+a - CRTM_surface_ir_emissivity.o
+a - CRTM_AtmOptics.o
+a - CRTM_RTSolution_Define.o
+a - CRTM_RTSolution_IO.o
+a - RTV_Define.o
+a - CRTM_RTSolution.o
+a - CRTM_Planck_Functions.o
+a - CRTM_AntCorr.o
+a - CRTM_AncillaryInput_Define.o
+a - SSU_Input_Define.o
+a - Zeeman_Input_Define.o
+a - CRTM_Options_Define.o
+a - CRTM_Parameters.o
+a - CRTM_LifeCycle.o
+a - CRTM_Forward_Module.o
+a - CRTM_Tangent_Linear_Module.o
+a - CRTM_Adjoint_Module.o
+a - CRTM_K_Matrix_Module.o
+a - CRTM_Module.o
+a - ODAS_AtmAbsorption.o
+a - ODAS_Predictor.o
+a - ODAS_Predictor_Define.o
+a - ODAS_Binary_IO.o
+a - ODAS_Define.o
+a - ODAS_TauCoeff.o
+a - ODPS_AtmAbsorption.o
+a - ODPS_Predictor.o
+a - ODPS_Predictor_Define.o
+a - ODPS_Binary_IO.o
+a - ODPS_Define.o
+a - ODPS_TauCoeff.o
+a - CRTM_GeometryInfo.o
+a - ODSSU_AtmAbsorption.o
+a - ODSSU_Define.o
+a - ODSSU_Binary_IO.o
+a - ODSSU_TauCoeff.o
+a - Profile_Utility_Parameters.o
+a - ODPS_CoordinateMapping.o
+a - ODZeeman_TauCoeff.o
+a - ODZeeman_AtmAbsorption.o
+a - ODZeeman_Predictor.o
+a - Zeeman_Utility.o
+make[5]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src/libsrc'
+
+Returning to directory /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src
+
+make[4]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src'
+
+Installing libCRTM.a in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src/lib
+
+test -d include || mkdir include
+
+Installing *.mod in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src/include
+
+make[3]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2/src'
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/crtm2'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/ip =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/ip'
+makefile:65: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gausslat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gcdist.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdsawt.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswiz00.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswiz01.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswiz03.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswiz04.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswiz05.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswizc9.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswizca.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswizcb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswizcd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswiz.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzd00.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzd01.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzd03.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzd04.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzd05.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzdc9.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzdca.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzdcb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzdcd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdswzd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ijkgds0.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ijkgds1.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ijkgds.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipmerge2.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipolates.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipolatev.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipsector.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipspaste.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipxetas.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipxwafs2.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipxwafs3.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ipxwafs.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include makgds.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include movect.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polateg0.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polateg1.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polateg4.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polates0.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polates1.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polates2.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polates3.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polates4.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polates6.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polatev0.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polatev1.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polatev2.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polatev3.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polatev4.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polatev6.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polfixs.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include polfixv.f
+ar ru   libip.a gausslat.o gcdist.o gdsawt.o gdswiz00.o gdswiz01.o gdswiz03.o gdswiz04.o gdswiz05.o gdswizc9.o gdswizca.o gdswizcb.o gdswizcd.o gdswiz.o gdswzd00.o gdswzd01.o gdswzd03.o gdswzd04.o gdswzd05.o gdswzdc9.o gdswzdca.o gdswzdcb.o gdswzdcd.o gdswzd.o ijkgds0.o ijkgds1.o ijkgds.o ipmerge2.o ipolates.o ipolatev.o ipsector.o ipspaste.o ipxetas.o ipxwafs2.o ipxwafs3.o ipxwafs.o makgds.o movect.o polateg0.o polateg1.o polateg4.o polates0.o polates1.o polates2.o polates3.o polates4.o polates6.o polatev0.o polatev1.o polatev2.o polatev3.o polatev4.o polatev6.o polfixs.o polfixv.o
+ar: creating libip.a
+/bin/cp libip.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/ip'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sfcio =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sfcio'
+makefile:45: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sfcio_module.f
+ar ru   libsfcio.a sfcio_module.o
+ar: creating libsfcio.a
+/bin/cp libsfcio.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sfcio'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sigio =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sigio'
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sigio_module.f sigio_r_module.f
+mpif90 -f90=ifort  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include bafrio.f
+ar ru   libsigio.a sigio_module.o sigio_r_module.o bafrio.o
+ar: creating libsigio.a
+/bin/cp libsigio.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sigio'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sp =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sp'
+makefile:63: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+makefile:66: warning: overriding recipe for target '.F.o'
+../../../configure.upp:132: warning: ignoring old recipe for target '.F.o'
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include bll2ps.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spanaly.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spdz2uv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include speps.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spfft1.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spffte.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spfft.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spfftpt.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spgradq.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spgradx.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spgrady.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include splaplac.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include splegend.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sppad.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spsynth.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptezd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptez.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptezmd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptezm.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptezmv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptezv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgpmd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgpm.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgpmv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgpsd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgps.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgpsv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgptd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgpt.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgptsd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgptvd.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptgptv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrand.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptran.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptranf0.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptranf1.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptranf.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptranfv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptranv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrund.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrun.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrung.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrungv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrunl.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrunm.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrunmv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptruns.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrunsv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sptrunv.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spuv2dz.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spvar.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include spwget.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN splat.F > splat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include splat.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN ncpus.F > ncpus.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ncpus.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN lapack_gen.F > lapack_gen.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include lapack_gen.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN fftpack.F > fftpack.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include fftpack.f
+ar ru   libsp.a bll2ps.o spanaly.o spdz2uv.o speps.o spfft1.o spffte.o spfft.o spfftpt.o spgradq.o spgradx.o spgrady.o splaplac.o splegend.o sppad.o spsynth.o sptezd.o sptez.o sptezmd.o sptezm.o sptezmv.o sptezv.o sptgpmd.o sptgpm.o sptgpmv.o sptgpsd.o sptgps.o sptgpsv.o sptgptd.o sptgpt.o sptgptsd.o sptgptvd.o sptgptv.o sptrand.o sptran.o sptranf0.o sptranf1.o sptranf.o sptranfv.o sptranv.o sptrund.o sptrun.o sptrung.o sptrungv.o sptrunl.o sptrunm.o sptrunmv.o sptruns.o sptrunsv.o sptrunv.o spuv2dz.o spvar.o spwget.o splat.o ncpus.o lapack_gen.o fftpack.o
+ar: creating libsp.a
+/bin/cp libsp.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/sp'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/w3emc =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/w3emc'
+makefile:57: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fa09.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fb06.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fb11.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbens.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include mova2i.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgbens.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include start.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include summary.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3log.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include mersenne_twister.f
+ar ru  libw3emc.a w3fa09.o w3fb06.o w3fb11.o getgbens.o mova2i.o putgbens.o start.o summary.o w3log.o mersenne_twister.o
+ar: creating libw3emc.a
+/bin/cp libw3emc.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/w3emc'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/w3nco =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/w3nco'
+makefile:62: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include errexit.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include errmsg.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include fparsei.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include fparser.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getbit.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb1r.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb1re.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb1s.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbe.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbeh.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbem.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbemh.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbemp.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbep.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbex.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbexm.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbh.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbm.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbmh.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbmp.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgbp.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgi.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgir.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include idsdef.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include instrument.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include iw3jdn.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ixgb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include lengds.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include pdsens.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include pdseup.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgbe.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgben.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgbex.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgbn.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include r63w72.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include skgb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3difdat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3doxdat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi01.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi58.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi59.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi63.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi68.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi71.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi72.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi73.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi74.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi75.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi76.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi82.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fi83.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fs21.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3fs26.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3locdat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3movdat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3reddat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3tagb.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3utcdat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include w3valdat.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gbytesc.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gbytec.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sbytesc.f
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include sbytec.f
+ar ru  libw3nco.a errexit.o errmsg.o fparsei.o fparser.o getbit.o getgb.o getgb1r.o getgb1re.o getgb1s.o getgbe.o getgbeh.o getgbem.o getgbemh.o getgbemp.o getgbep.o getgbex.o getgbexm.o getgbh.o getgbm.o getgbmh.o getgbmp.o getgbp.o getgi.o getgir.o idsdef.o instrument.o iw3jdn.o ixgb.o lengds.o pdsens.o pdseup.o putgb.o putgbe.o putgben.o putgbex.o putgbn.o r63w72.o skgb.o w3difdat.o w3doxdat.o w3fi01.o w3fi58.o w3fi59.o w3fi63.o w3fi68.o w3fi71.o w3fi72.o w3fi73.o w3fi74.o w3fi75.o w3fi76.o w3fi82.o w3fi83.o w3fs21.o w3fs26.o w3locdat.o w3movdat.o w3reddat.o w3tagb.o w3utcdat.o w3valdat.o gbytesc.o gbytec.o sbytesc.o sbytec.o
+ar: creating libw3nco.a
+/bin/cp libw3nco.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/w3nco'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/nemsio =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/nemsio'
+makefile:52: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+makefile:54: warning: overriding recipe for target '.f90.o'
+../../../configure.upp:129: warning: ignoring old recipe for target '.f90.o'
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I../wrfmpi_stubs nemsio_openclose.f90
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I../wrfmpi_stubs nemsio_read.f90
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I../wrfmpi_stubs nemsio_write.f90
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I../wrfmpi_stubs nemsio_module.f90
+mpif90 -f90=ifort -free  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I../wrfmpi_stubs nemsio_module_mpi.f90
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I../wrfmpi_stubs bafrio.f
+ar ru   libnemsio.a nemsio_openclose.o nemsio_read.o nemsio_write.o nemsio_module.o nemsio_module_mpi.o bafrio.o  
+ar: creating libnemsio.a
+/bin/cp libnemsio.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/nemsio'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/gfsio =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/gfsio'
+makefile:54: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+makefile:56: warning: overriding recipe for target '.F.o'
+../../../configure.upp:132: warning: ignoring old recipe for target '.F.o'
+ifort -free -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gfsio_module.f
+ar ru   libgfsio.a gfsio_module.o  
+ar: creating libgfsio.a
+/bin/cp libgfsio.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/gfsio'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/g2 =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/g2'
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include intmath.f
+ar ru   ../../../libg2.a intmath.o
+ar: creating ../../../libg2.a
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gridtemplates.f
+ar ru   ../../../libg2.a gridtemplates.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include pdstemplates.f
+ar ru   ../../../libg2.a pdstemplates.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include drstemplates.f
+ar ru   ../../../libg2.a drstemplates.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gribmod.f
+ar ru   ../../../libg2.a gribmod.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include realloc.f
+ar ru   ../../../libg2.a realloc.o
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -DUSE_JPEG2000 addfield.F addfield.f
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include addfield.f
+ar ru   ../../../libg2.a addfield.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include addgrid.f
+ar ru   ../../../libg2.a addgrid.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include addlocal.f
+ar ru   ../../../libg2.a addlocal.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getfield.f
+ar ru   ../../../libg2.a getfield.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gb_info.f
+ar ru   ../../../libg2.a gb_info.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_getfld.f
+ar ru   ../../../libg2.a gf_getfld.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_free.f
+ar ru   ../../../libg2.a gf_free.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack1.f
+ar ru   ../../../libg2.a gf_unpack1.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack2.f
+ar ru   ../../../libg2.a gf_unpack2.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack3.f
+ar ru   ../../../libg2.a gf_unpack3.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack4.f
+ar ru   ../../../libg2.a gf_unpack4.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack5.f
+ar ru   ../../../libg2.a gf_unpack5.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack6.f
+ar ru   ../../../libg2.a gf_unpack6.o
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -DUSE_JPEG2000 gf_unpack7.F gf_unpack7.f
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gf_unpack7.f
+ar ru   ../../../libg2.a gf_unpack7.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gettemplates.f
+ar ru   ../../../libg2.a gettemplates.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getlocal.f
+ar ru   ../../../libg2.a getlocal.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getdim.f
+ar ru   ../../../libg2.a getdim.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getpoly.f
+ar ru   ../../../libg2.a getpoly.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gribcreate.f
+ar ru   ../../../libg2.a gribcreate.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gribend.f
+ar ru   ../../../libg2.a gribend.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gribinfo.f
+ar ru   ../../../libg2.a gribinfo.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include mkieee.f
+ar ru   ../../../libg2.a mkieee.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include rdieee.f
+ar ru   ../../../libg2.a rdieee.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include simpack.f
+ar ru   ../../../libg2.a simpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include simunpack.f
+ar ru   ../../../libg2.a simunpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include cmplxpack.f
+ar ru   ../../../libg2.a cmplxpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include compack.f
+ar ru   ../../../libg2.a compack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include misspack.f
+ar ru   ../../../libg2.a misspack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include pack_gp.f
+ar ru   ../../../libg2.a pack_gp.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include reduce.f
+ar ru   ../../../libg2.a reduce.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include comunpack.f
+ar ru   ../../../libg2.a comunpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include specpack.f
+ar ru   ../../../libg2.a specpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include specunpack.f
+ar ru   ../../../libg2.a specunpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include jpcpack.f
+ar ru   ../../../libg2.a jpcpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include jpcunpack.f
+ar ru   ../../../libg2.a jpcunpack.o
+mpicc  -c  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/apps/iola_libs/include enc_jpeg2000.c
+ar ru   ../../../libg2.a enc_jpeg2000.o
+mpicc  -c  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/apps/iola_libs/include dec_jpeg2000.c
+ar ru   ../../../libg2.a dec_jpeg2000.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include pngpack.f
+ar ru   ../../../libg2.a pngpack.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include pngunpack.f
+ar ru   ../../../libg2.a pngunpack.o
+mpicc  -c  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/apps/iola_libs/include enc_png.c
+ar ru   ../../../libg2.a enc_png.o
+mpicc  -c  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c -I/apps/iola_libs/include dec_png.c
+ar ru   ../../../libg2.a dec_png.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gbytesc.f
+ar ru   ../../../libg2.a gbytesc.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include skgb.f
+ar ru   ../../../libg2.a skgb.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include ixgb2.f
+ar ru   ../../../libg2.a ixgb2.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getidx.f
+ar ru   ../../../libg2.a getidx.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getidxes.f
+ar ru   ../../../libg2.a getidxes.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getg2i.f
+ar ru   ../../../libg2.a getg2i.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getg2ir.f
+ar ru   ../../../libg2.a getg2ir.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb2s.f
+ar ru   ../../../libg2.a getgb2s.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb2r.f
+ar ru   ../../../libg2.a getgb2r.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb2l.f
+ar ru   ../../../libg2.a getgb2l.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb2.f
+ar ru   ../../../libg2.a getgb2.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb2p.f
+ar ru   ../../../libg2.a getgb2p.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include getgb2rp.f
+ar ru   ../../../libg2.a getgb2rp.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include putgb2.f
+ar ru   ../../../libg2.a putgb2.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include g2grids.f
+ar ru   ../../../libg2.a g2grids.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdt2gds.f
+ar ru   ../../../libg2.a gdt2gds.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include params.f
+ar ru   ../../../libg2.a params.o
+mpif90 -f90=ifort  -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include params_ecmwf.f
+ar ru   ../../../libg2.a params_ecmwf.o
+/bin/cp ../../../libg2.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/g2'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/g2tmpl =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/g2tmpl'
+makefile:40: warning: overriding recipe for target '.f.o'
+../../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+mpicc   -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -c  process_4dot2.c
+ifort -free -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include grib2_all_tables_module.f
+ifort -free -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include gdtsec3.f
+ifort -free -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include g2sec4_temp1.f
+ifort -free -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include g2sec4_temp11.f
+ifort -free -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c  -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include g2sec4_temp12.f
+ar ru   libg2tmpl.a process_4dot2.o grib2_all_tables_module.o gdtsec3.o g2sec4_temp1.o g2sec4_temp11.o g2sec4_temp12.o
+ar: creating libg2tmpl.a
+/bin/cp libg2tmpl.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib
+/bin/cp *.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/g2tmpl'
+
+===== Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/xml =====
+make[2]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/xml'
+makefile:42: warning: overriding recipe for target '.f90.o'
+../../../configure.upp:129: warning: ignoring old recipe for target '.f90.o'
+mpif90 -f90=ifort  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -O2 xmlparse.f90
+mpif90 -f90=ifort  -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -O2 read_xml_prims.f90
+ar ru  libxmlparse.a xmlparse.o read_xml_prims.o
+ar: creating libxmlparse.a
+/bin/cp *.mod  /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include
+/bin/cp libxmlparse.a /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib 
+make[2]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib/xml'
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/lib'
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/unipost
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/unipost'
+makefile:128: warning: overriding recipe for target '.F.o'
+../../configure.upp:132: warning: ignoring old recipe for target '.F.o'
+makefile:132: warning: overriding recipe for target '.f.o'
+../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+makefile:135: warning: overriding recipe for target '.f90.o'
+../../configure.upp:129: warning: ignoring old recipe for target '.f90.o'
+makefile:138: warning: overriding recipe for target '.c.o'
+../../configure.upp:123: warning: ignoring old recipe for target '.c.o'
+ln -sf  /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/frame/module_internal_header_util.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/
+ln -sf  /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/io_int/module_io_int_idx.mod /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  wrf_io_flags.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  getVariable.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  getIVariable.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  getIVariableN.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  kinds_mod.F > kinds_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  kinds_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  machine.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  physcons.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  native_endianness.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  count_recs_wrf_binary_file.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  inventory_wrf_binary_file.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  next_buf.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  retrieve_index.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  ZENSUN.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CLDFRAC_ZHAO.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  GFSPOST.F > GFSPOST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GFSPOST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GETGBANDSCATTER.f
+mpicc  -c  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3 -Dfunder -DFortranByte=char -DFortranInt=int -DFortranLlong='long long' blockIO.c
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  initialize_byte_swap_wrf_binary_file.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  VRBLS2D_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  VRBLS3D_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  VRBLS4D_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MASKS_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  PMICRPH.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SOIL_mod.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CMASSI.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CTLBLK.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GRIDSPEC.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  LOOKUP.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  PARAMR.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  RHGRD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  RQSTFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  xml_perl_data.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  cuparm.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  params.F > params.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  params.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  svptbl.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  get_postfilename.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  grib2_module.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SET_LVLSXML.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  FILL_PSETFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  BNDLYR.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  BOUND.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALCAPE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALDWP.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALDRG.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALHEL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALLCL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALMCVG.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALPOT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALPW.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALRH.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALRCH.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALRH_GSD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALSTRM.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALTAU.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALTHTE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALVIS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALVIS_GSD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALVOR.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALWXT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALWXT_RAMER.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALWXT_BOURG.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALWXT_REVISED.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALRH_PW.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALWXT_EXPLICIT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALWXT_DOMINANT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CLDRAD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CLMAX.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  COLLECT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  COLLECT_LOC.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  DEWPOINT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  FDLVL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  FGAMMA.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  FIXED.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  FRZLVL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  FRZLVL2.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GET_BITS.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  GRIBIT.F > GRIBIT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GRIBIT.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  INITPOST.F > INITPOST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  LFMFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MAPSSLP.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MISCLN.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MIXLEN.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MDL2P.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  ETAMP_Q2F.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  MDLFLD.F > MDLFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MDLFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MPI_FIRST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MPI_LAST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  NGMFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  NGMSLP.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  OTLFT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  OTLIFT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SLP_new.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SLP_NMM.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  EXCH.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  PARA_RANGE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  PROCESS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_NMM.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  EXCH2.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  READCNTRL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  READ_xml.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SET_OUTFLDS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SCLFLD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SERVER.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SETUP_SERVERS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SMOOTH.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SURFCE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SPLINE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  TABLE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  TABLEQ.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  TRPAUS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  TTBLEX.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  WETBULB.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  WRFPOST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALMICT.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  MICROINIT.F > MICROINIT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MICROINIT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GPVS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MDL2SIGMA.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  ETCALC.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CANRES.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALGUST.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  WETFRZLVL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SNFRAC.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MDL2AGL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SNFRAC_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  AVIATION.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  DEALLOCATE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_NMM_BIN_MPIIO_READ.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_NMM_BIN_MPIIO.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALPBL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MDL2SIGMA2.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALRH_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  LFMFLD_GFS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALRAD_WCLOUD_newcrtm.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MDL2THANDPV.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALPBLREGIME.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  POLEAVG.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_NEMS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GETNEMSNDSCATTER.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  ICAOHEIGHT.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_GFS_NEMS.f
+/lib/cpp -P -traditional -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN  INITPOST_BIN_MPIIO.F > INITPOST_BIN_MPIIO.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_BIN_MPIIO.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GEO_ZENITH_ANGLE.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GFIP3.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  GRIDAVG.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  CALUPDHEL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  MSFPS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_GFS_SIGIO.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  AllGETHERV_GSD.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  SELECT_CHANNELS.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  ALLOCATE_ALL.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_NEMS_MPIIO.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  ASSIGNNEMSIOVAR.f
+mpif90 -f90=ifort -free   -c -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -c -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include -I/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/include/crtm2  INITPOST_GFS_NEMS_MPIIO.f
+mpif90 -f90=ifort -free  -o unipost.exe -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/frame/module_internal_header_util.o /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/frame/pack_utils.o /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/frame/module_machine.o /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/frame/module_wrf_error.o /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/frame/wrf_debug.o VRBLS2D_mod.o VRBLS3D_mod.o VRBLS4D_mod.o MASKS_mod.o PMICRPH.o SOIL_mod.o CMASSI.o CTLBLK.o GRIDSPEC.o LOOKUP.o PARAMR.o RHGRD.o RQSTFLD.o xml_perl_data.o cuparm.o params.o svptbl.o get_postfilename.o grib2_module.o SET_LVLSXML.o FILL_PSETFLD.o BNDLYR.o  BOUND.o  CALCAPE.o CALDWP.o  CALDRG.o CALHEL.o  CALLCL.o  CALMCVG.o CALPOT.o  CALPW.o CALRH.o  CALRCH.o CALRH_GSD.o CALSTRM.o CALTAU.o CALTHTE.o CALVIS.o CALVIS_GSD.o CALVOR.o CALWXT.o  CALWXT_RAMER.o CALWXT_BOURG.o CALWXT_REVISED.o CALRH_PW.o CALWXT_EXPLICIT.o CALWXT_DOMINANT.o CLDRAD.o CLMAX.o COLLECT.o  COLLECT_LOC.o DEWPOINT.o FDLVL.o  FGAMMA.o FIXED.o  FRZLVL.o  FRZLVL2.o GET_BITS.o  GRIBIT.o INITPOST.o LFMFLD.o  MAPSSLP.o MISCLN.o MIXLEN.o MDL2P.o ETAMP_Q2F.o MDLFLD.o MPI_FIRST.o  MPI_LAST.o NGMFLD.o NGMSLP.o  OTLFT.o OTLIFT.o SLP_new.o SLP_NMM.o EXCH.o PARA_RANGE.o PROCESS.o INITPOST_NMM.o EXCH2.o READCNTRL.o  READ_xml.o SET_OUTFLDS.o SCLFLD.o  SERVER.o SETUP_SERVERS.o SMOOTH.o SURFCE.o SPLINE.o  TABLE.o  TABLEQ.o  TRPAUS.o  TTBLEX.o WETBULB.o WRFPOST.o CALMICT.o MICROINIT.o GPVS.o MDL2SIGMA.o ETCALC.o CANRES.o CALGUST.o WETFRZLVL.o SNFRAC.o MDL2AGL.o SNFRAC_GFS.o AVIATION.o DEALLOCATE.o INITPOST_NMM_BIN_MPIIO_READ.o INITPOST_NMM_BIN_MPIIO.o CALPBL.o MDL2SIGMA2.o INITPOST_GFS.o CALRH_GFS.o LFMFLD_GFS.o CALRAD_WCLOUD_newcrtm.o MDL2THANDPV.o CALPBLREGIME.o POLEAVG.o INITPOST_NEMS.o GETNEMSNDSCATTER.o ICAOHEIGHT.o INITPOST_GFS_NEMS.o INITPOST_BIN_MPIIO.o GEO_ZENITH_ANGLE.o GFIP3.o GRIDAVG.o CALUPDHEL.o MSFPS.o INITPOST_GFS_SIGIO.o AllGETHERV_GSD.o SELECT_CHANNELS.o ALLOCATE_ALL.o INITPOST_NEMS_MPIIO.o ASSIGNNEMSIOVAR.o INITPOST_GFS_NEMS_MPIIO.o  wrf_io_flags.o getVariable.o getIVariable.o getIVariableN.o kinds_mod.o machine.o physcons.o native_endianness.o count_recs_wrf_binary_file.o inventory_wrf_binary_file.o next_buf.o retrieve_index.o ZENSUN.o CLDFRAC_ZHAO.o GFSPOST.o GETGBANDSCATTER.o blockIO.o initialize_byte_swap_wrf_binary_file.o -Wl,-noinhibit-exec  -L/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib -lnemsio -lsigio -lsfcio -lgfsio -lsp -lw3nco -lw3emc -lbacio -lCRTM  -lg2 -lg2tmpl -lxmlparse -L/apps/iola_libs/lib -lpng -lz -ljasper -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main  -lwrflib -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/io_int -lwrfio_int -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/io_netcdf -lwrfio_nf -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/io_grib1 -lio_grib1 -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/io_grib_share -lio_grib_share -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/esmf_time_f90 -lesmf_time -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/fftpack/fftpack5 -lfftpack -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/RSL_LITE -lrsl_lite -L/home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/external/atm_ocn -latm_ocn -L/apps/iola_libs/lib -lnetcdff -lnetcdf 
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_real_arr_':
+module_io.f90:(.text+0x32d): undefined reference to `ext_pnc_get_dom_ti_real_'
+ld: module_io.f90:(.text+0x514): undefined reference to `ext_gr2_get_dom_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_real_sca_':
+module_io.f90:(.text+0xadf): undefined reference to `ext_pnc_get_dom_ti_real_'
+ld: module_io.f90:(.text+0xcc6): undefined reference to `ext_gr2_get_dom_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_real_arr_':
+module_io.f90:(.text+0x122c): undefined reference to `ext_pnc_put_dom_ti_real_'
+ld: module_io.f90:(.text+0x13aa): undefined reference to `ext_gr2_put_dom_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_real_sca_':
+module_io.f90:(.text+0x1856): undefined reference to `ext_pnc_put_dom_ti_real_'
+ld: module_io.f90:(.text+0x19d4): undefined reference to `ext_gr2_put_dom_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_double_arr_':
+module_io.f90:(.text+0x1e8d): undefined reference to `ext_pnc_get_dom_ti_double_'
+ld: module_io.f90:(.text+0x202b): undefined reference to `ext_gr2_get_dom_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_double_sca_':
+module_io.f90:(.text+0x250c): undefined reference to `ext_pnc_get_dom_ti_double_'
+ld: module_io.f90:(.text+0x26aa): undefined reference to `ext_gr2_get_dom_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_double_arr_':
+module_io.f90:(.text+0x2b6f): undefined reference to `ext_pnc_put_dom_ti_double_'
+ld: module_io.f90:(.text+0x2ced): undefined reference to `ext_gr2_put_dom_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_double_sca_':
+module_io.f90:(.text+0x318a): undefined reference to `ext_pnc_put_dom_ti_double_'
+ld: module_io.f90:(.text+0x3308): undefined reference to `ext_gr2_put_dom_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_integer_arr_':
+module_io.f90:(.text+0x3819): undefined reference to `ext_pnc_get_dom_ti_integer_'
+ld: module_io.f90:(.text+0x3a00): undefined reference to `ext_gr2_get_dom_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_integer_sca_':
+module_io.f90:(.text+0x3fcb): undefined reference to `ext_pnc_get_dom_ti_integer_'
+ld: module_io.f90:(.text+0x41b2): undefined reference to `ext_gr2_get_dom_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_integer_arr_':
+module_io.f90:(.text+0x4718): undefined reference to `ext_pnc_put_dom_ti_integer_'
+ld: module_io.f90:(.text+0x4896): undefined reference to `ext_gr2_put_dom_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_integer_sca_':
+module_io.f90:(.text+0x4d42): undefined reference to `ext_pnc_put_dom_ti_integer_'
+ld: module_io.f90:(.text+0x4ec0): undefined reference to `ext_gr2_put_dom_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_logical_arr_':
+module_io.f90:(.text+0x53d1): undefined reference to `ext_pnc_get_dom_ti_logical_'
+ld: module_io.f90:(.text+0x55b8): undefined reference to `ext_gr2_get_dom_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_logical_sca_':
+module_io.f90:(.text+0x5b83): undefined reference to `ext_pnc_get_dom_ti_logical_'
+ld: module_io.f90:(.text+0x5d6a): undefined reference to `ext_gr2_get_dom_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_logical_arr_':
+module_io.f90:(.text+0x62d0): undefined reference to `ext_pnc_put_dom_ti_logical_'
+ld: module_io.f90:(.text+0x644e): undefined reference to `ext_gr2_put_dom_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_logical_sca_':
+module_io.f90:(.text+0x68fa): undefined reference to `ext_pnc_put_dom_ti_logical_'
+ld: module_io.f90:(.text+0x6a78): undefined reference to `ext_gr2_put_dom_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_ti_char_arr_':
+module_io.f90:(.text+0x6f81): undefined reference to `ext_pnc_get_dom_ti_char_'
+ld: module_io.f90:(.text+0x7177): undefined reference to `ext_gr2_get_dom_ti_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_ti_char_arr_':
+module_io.f90:(.text+0x76e4): undefined reference to `ext_pnc_put_dom_ti_char_'
+ld: module_io.f90:(.text+0x7878): undefined reference to `ext_gr2_put_dom_ti_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_real_arr_':
+module_io.f90:(.text+0x7de7): undefined reference to `ext_pnc_get_dom_td_real_'
+ld: module_io.f90:(.text+0x8013): undefined reference to `ext_gr2_get_dom_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_real_sca_':
+module_io.f90:(.text+0x8658): undefined reference to `ext_pnc_get_dom_td_real_'
+ld: module_io.f90:(.text+0x8884): undefined reference to `ext_gr2_get_dom_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_real_arr_':
+module_io.f90:(.text+0x8e74): undefined reference to `ext_pnc_put_dom_td_real_'
+ld: module_io.f90:(.text+0x9044): undefined reference to `ext_gr2_put_dom_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_real_sca_':
+module_io.f90:(.text+0x959c): undefined reference to `ext_pnc_put_dom_td_real_'
+ld: module_io.f90:(.text+0x976c): undefined reference to `ext_gr2_put_dom_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_double_arr_':
+module_io.f90:(.text+0x9cc1): undefined reference to `ext_pnc_get_dom_td_double_'
+ld: module_io.f90:(.text+0x9ea4): undefined reference to `ext_gr2_get_dom_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_double_sca_':
+module_io.f90:(.text+0xa3ff): undefined reference to `ext_pnc_get_dom_td_double_'
+ld: module_io.f90:(.text+0xa5e2): undefined reference to `ext_gr2_get_dom_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_double_arr_':
+module_io.f90:(.text+0xab31): undefined reference to `ext_pnc_put_dom_td_double_'
+ld: module_io.f90:(.text+0xad01): undefined reference to `ext_gr2_put_dom_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_double_sca_':
+module_io.f90:(.text+0xb24a): undefined reference to `ext_pnc_put_dom_td_double_'
+ld: module_io.f90:(.text+0xb41a): undefined reference to `ext_gr2_put_dom_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_integer_arr_':
+module_io.f90:(.text+0xb9c7): undefined reference to `ext_pnc_get_dom_td_integer_'
+ld: module_io.f90:(.text+0xbbf3): undefined reference to `ext_gr2_get_dom_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_integer_sca_':
+module_io.f90:(.text+0xc238): undefined reference to `ext_pnc_get_dom_td_integer_'
+ld: module_io.f90:(.text+0xc464): undefined reference to `ext_gr2_get_dom_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_integer_arr_':
+module_io.f90:(.text+0xca54): undefined reference to `ext_pnc_put_dom_td_integer_'
+ld: module_io.f90:(.text+0xcc24): undefined reference to `ext_gr2_put_dom_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_integer_sca_':
+module_io.f90:(.text+0xd17c): undefined reference to `ext_pnc_put_dom_td_integer_'
+ld: module_io.f90:(.text+0xd34c): undefined reference to `ext_gr2_put_dom_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_logical_arr_':
+module_io.f90:(.text+0xd8f9): undefined reference to `ext_pnc_get_dom_td_logical_'
+ld: module_io.f90:(.text+0xdb25): undefined reference to `ext_gr2_get_dom_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_logical_sca_':
+module_io.f90:(.text+0xe16a): undefined reference to `ext_pnc_get_dom_td_logical_'
+ld: module_io.f90:(.text+0xe396): undefined reference to `ext_gr2_get_dom_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_logical_arr_':
+module_io.f90:(.text+0xe986): undefined reference to `ext_pnc_put_dom_td_logical_'
+ld: module_io.f90:(.text+0xeb56): undefined reference to `ext_gr2_put_dom_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_logical_sca_':
+module_io.f90:(.text+0xf0ae): undefined reference to `ext_pnc_put_dom_td_logical_'
+ld: module_io.f90:(.text+0xf27e): undefined reference to `ext_gr2_put_dom_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_dom_td_char_arr_':
+module_io.f90:(.text+0xf82d): undefined reference to `ext_pnc_get_dom_td_char_'
+ld: module_io.f90:(.text+0xfa73): undefined reference to `ext_gr2_get_dom_td_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_dom_td_char_arr_':
+module_io.f90:(.text+0x1007c): undefined reference to `ext_pnc_put_dom_td_char_'
+ld: module_io.f90:(.text+0x10266): undefined reference to `ext_gr2_put_dom_td_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_real_arr_':
+module_io.f90:(.text+0x1082f): undefined reference to `ext_pnc_get_var_ti_real_'
+ld: module_io.f90:(.text+0x10a5b): undefined reference to `ext_gr2_get_var_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_real_sca_':
+module_io.f90:(.text+0x110a0): undefined reference to `ext_pnc_get_var_ti_real_'
+ld: module_io.f90:(.text+0x112cc): undefined reference to `ext_gr2_get_var_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_real_arr_':
+module_io.f90:(.text+0x118bc): undefined reference to `ext_pnc_put_var_ti_real_'
+ld: module_io.f90:(.text+0x11a8c): undefined reference to `ext_gr2_put_var_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_real_sca_':
+module_io.f90:(.text+0x11fe4): undefined reference to `ext_pnc_put_var_ti_real_'
+ld: module_io.f90:(.text+0x121b4): undefined reference to `ext_gr2_put_var_ti_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_double_arr_':
+module_io.f90:(.text+0x12709): undefined reference to `ext_pnc_get_var_ti_double_'
+ld: module_io.f90:(.text+0x128ec): undefined reference to `ext_gr2_get_var_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_double_sca_':
+module_io.f90:(.text+0x12e47): undefined reference to `ext_pnc_get_var_ti_double_'
+ld: module_io.f90:(.text+0x1302a): undefined reference to `ext_gr2_get_var_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_double_arr_':
+module_io.f90:(.text+0x13579): undefined reference to `ext_pnc_put_var_ti_double_'
+ld: module_io.f90:(.text+0x13749): undefined reference to `ext_gr2_put_var_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_double_sca_':
+module_io.f90:(.text+0x13c92): undefined reference to `ext_pnc_put_var_ti_double_'
+ld: module_io.f90:(.text+0x13e62): undefined reference to `ext_gr2_put_var_ti_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_integer_arr_':
+module_io.f90:(.text+0x1440f): undefined reference to `ext_pnc_get_var_ti_integer_'
+ld: module_io.f90:(.text+0x1463b): undefined reference to `ext_gr2_get_var_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_integer_sca_':
+module_io.f90:(.text+0x14c80): undefined reference to `ext_pnc_get_var_ti_integer_'
+ld: module_io.f90:(.text+0x14eac): undefined reference to `ext_gr2_get_var_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_integer_arr_':
+module_io.f90:(.text+0x1549c): undefined reference to `ext_pnc_put_var_ti_integer_'
+ld: module_io.f90:(.text+0x1566c): undefined reference to `ext_gr2_put_var_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_integer_sca_':
+module_io.f90:(.text+0x15bc4): undefined reference to `ext_pnc_put_var_ti_integer_'
+ld: module_io.f90:(.text+0x15d94): undefined reference to `ext_gr2_put_var_ti_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_logical_arr_':
+module_io.f90:(.text+0x16341): undefined reference to `ext_pnc_get_var_ti_logical_'
+ld: module_io.f90:(.text+0x1656d): undefined reference to `ext_gr2_get_var_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_logical_sca_':
+module_io.f90:(.text+0x16bb2): undefined reference to `ext_pnc_get_var_ti_logical_'
+ld: module_io.f90:(.text+0x16dde): undefined reference to `ext_gr2_get_var_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_logical_arr_':
+module_io.f90:(.text+0x173ce): undefined reference to `ext_pnc_put_var_ti_logical_'
+ld: module_io.f90:(.text+0x1759e): undefined reference to `ext_gr2_put_var_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_logical_sca_':
+module_io.f90:(.text+0x17af6): undefined reference to `ext_pnc_put_var_ti_logical_'
+ld: module_io.f90:(.text+0x17cc6): undefined reference to `ext_gr2_put_var_ti_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_ti_char_arr_':
+module_io.f90:(.text+0x18275): undefined reference to `ext_pnc_get_var_ti_char_'
+ld: module_io.f90:(.text+0x184bb): undefined reference to `ext_gr2_get_var_ti_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_ti_char_arr_':
+module_io.f90:(.text+0x18ac4): undefined reference to `ext_pnc_put_var_ti_char_'
+ld: module_io.f90:(.text+0x18cae): undefined reference to `ext_gr2_put_var_ti_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_real_arr_':
+module_io.f90:(.text+0x192b7): undefined reference to `ext_pnc_get_var_td_real_'
+ld: module_io.f90:(.text+0x19523): undefined reference to `ext_gr2_get_var_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_real_sca_':
+module_io.f90:(.text+0x19be8): undefined reference to `ext_pnc_get_var_td_real_'
+ld: module_io.f90:(.text+0x19e54): undefined reference to `ext_gr2_get_var_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_real_arr_':
+module_io.f90:(.text+0x1a4be): undefined reference to `ext_pnc_put_var_td_real_'
+ld: module_io.f90:(.text+0x1a6cf): undefined reference to `ext_gr2_put_var_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_real_sca_':
+module_io.f90:(.text+0x1ac95): undefined reference to `ext_pnc_put_var_td_real_'
+ld: module_io.f90:(.text+0x1aea6): undefined reference to `ext_gr2_put_var_td_real_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_double_arr_':
+module_io.f90:(.text+0x1b46f): undefined reference to `ext_pnc_get_var_td_double_'
+ld: module_io.f90:(.text+0x1b692): undefined reference to `ext_gr2_get_var_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_double_sca_':
+module_io.f90:(.text+0x1bc6d): undefined reference to `ext_pnc_get_var_td_double_'
+ld: module_io.f90:(.text+0x1be90): undefined reference to `ext_gr2_get_var_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_double_arr_':
+module_io.f90:(.text+0x1c459): undefined reference to `ext_pnc_put_var_td_double_'
+ld: module_io.f90:(.text+0x1c66a): undefined reference to `ext_gr2_put_var_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_double_sca_':
+module_io.f90:(.text+0x1cc21): undefined reference to `ext_pnc_put_var_td_double_'
+ld: module_io.f90:(.text+0x1ce32): undefined reference to `ext_gr2_put_var_td_double_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_integer_arr_':
+module_io.f90:(.text+0x1d453): undefined reference to `ext_pnc_get_var_td_integer_'
+ld: module_io.f90:(.text+0x1d6bf): undefined reference to `ext_gr2_get_var_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_integer_sca_':
+module_io.f90:(.text+0x1dd84): undefined reference to `ext_pnc_get_var_td_integer_'
+ld: module_io.f90:(.text+0x1dff0): undefined reference to `ext_gr2_get_var_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_integer_arr_':
+module_io.f90:(.text+0x1e65a): undefined reference to `ext_pnc_put_var_td_integer_'
+ld: module_io.f90:(.text+0x1e86b): undefined reference to `ext_gr2_put_var_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_integer_sca_':
+module_io.f90:(.text+0x1ee31): undefined reference to `ext_pnc_put_var_td_integer_'
+ld: module_io.f90:(.text+0x1f042): undefined reference to `ext_gr2_put_var_td_integer_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_logical_arr_':
+module_io.f90:(.text+0x1f663): undefined reference to `ext_pnc_get_var_td_logical_'
+ld: module_io.f90:(.text+0x1f8cf): undefined reference to `ext_gr2_get_var_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_logical_sca_':
+module_io.f90:(.text+0x1ff94): undefined reference to `ext_pnc_get_var_td_logical_'
+ld: module_io.f90:(.text+0x20200): undefined reference to `ext_gr2_get_var_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_logical_arr_':
+module_io.f90:(.text+0x2086a): undefined reference to `ext_pnc_put_var_td_logical_'
+ld: module_io.f90:(.text+0x20a7b): undefined reference to `ext_gr2_put_var_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_logical_sca_':
+module_io.f90:(.text+0x21041): undefined reference to `ext_pnc_put_var_td_logical_'
+ld: module_io.f90:(.text+0x21252): undefined reference to `ext_gr2_put_var_td_logical_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_td_char_arr_':
+module_io.f90:(.text+0x21875): undefined reference to `ext_pnc_get_var_td_char_'
+ld: module_io.f90:(.text+0x21afb): undefined reference to `ext_gr2_get_var_td_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_put_var_td_char_arr_':
+module_io.f90:(.text+0x22184): undefined reference to `ext_pnc_put_var_td_char_'
+ld: module_io.f90:(.text+0x223ae): undefined reference to `ext_gr2_put_var_td_char_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_ioinit_':
+module_io.f90:(.text+0x24aa2): undefined reference to `ext_gr2_ioinit_'
+ld: module_io.f90:(.text+0x24ad4): undefined reference to `ext_pnc_ioinit_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_ioexit_':
+module_io.f90:(.text+0x24ccb): undefined reference to `ext_gr2_ioexit_'
+ld: module_io.f90:(.text+0x24ced): undefined reference to `ext_pnc_ioexit_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_open_for_write_begin_':
+module_io.f90:(.text+0x258ba): undefined reference to `ext_pnc_open_for_write_begin_'
+ld: module_io.f90:(.text+0x25c70): undefined reference to `ext_gr2_open_for_write_begin_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_open_for_write_commit_':
+module_io.f90:(.text+0x264e7): undefined reference to `ext_pnc_open_for_write_commit_'
+ld: module_io.f90:(.text+0x265af): undefined reference to `ext_gr2_open_for_write_commit_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_open_for_read_begin_':
+module_io.f90:(.text+0x26aa9): undefined reference to `ext_pnc_open_for_read_begin_'
+ld: module_io.f90:(.text+0x26e43): undefined reference to `ext_gr2_open_for_read_begin_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_open_for_read_commit_':
+module_io.f90:(.text+0x271ea): undefined reference to `ext_pnc_open_for_read_commit_'
+ld: module_io.f90:(.text+0x2721e): undefined reference to `ext_gr2_open_for_read_commit_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_open_for_read_':
+module_io.f90:(.text+0x27694): undefined reference to `ext_pnc_open_for_read_'
+ld: module_io.f90:(.text+0x27a34): undefined reference to `ext_gr2_open_for_read_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_inquire_opened_':
+module_io.f90:(.text+0x27f16): undefined reference to `ext_pnc_inquire_opened_'
+ld: module_io.f90:(.text+0x28024): undefined reference to `ext_gr2_inquire_opened_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_inquire_filename_':
+module_io.f90:(.text+0x284d8): undefined reference to `ext_pnc_inquire_filename_'
+ld: module_io.f90:(.text+0x285e6): undefined reference to `ext_gr2_inquire_filename_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_iosync_':
+module_io.f90:(.text+0x289d5): undefined reference to `ext_gr2_iosync_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_ioclose_':
+module_io.f90:(.text+0x28c3d): undefined reference to `ext_pnc_ioclose_'
+ld: module_io.f90:(.text+0x28ce6): undefined reference to `ext_gr2_ioclose_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_next_time_':
+module_io.f90:(.text+0x29090): undefined reference to `ext_pnc_get_next_time_'
+ld: module_io.f90:(.text+0x290e9): undefined reference to `ext_pnc_get_next_time_'
+ld: module_io.f90:(.text+0x292c3): undefined reference to `ext_gr2_get_next_time_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_previous_time_':
+module_io.f90:(.text+0x29784): undefined reference to `ext_pnc_get_previous_time_'
+ld: module_io.f90:(.text+0x298f2): undefined reference to `ext_gr2_get_previous_time_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_set_time_':
+module_io.f90:(.text+0x29c09): undefined reference to `ext_pnc_set_time_'
+ld: module_io.f90:(.text+0x29cf6): undefined reference to `ext_gr2_set_time_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_next_var_':
+module_io.f90:(.text+0x2a0cd): undefined reference to `ext_gr2_get_next_var_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `module_io_mp_wrf_get_var_info_':
+module_io.f90:(.text+0x2a4f4): undefined reference to `ext_pnc_get_var_info_'
+ld: module_io.f90:(.text+0x2a648): undefined reference to `ext_gr2_get_var_info_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `wrf_read_field1_':
+module_io.f90:(.text+0x2c2b7): undefined reference to `ext_pnc_read_field_'
+ld: module_io.f90:(.text+0x2c6b8): undefined reference to `ext_gr2_read_field_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io.o): in function `wrf_write_field1_':
+module_io.f90:(.text+0x2e482): undefined reference to `ext_pnc_write_field_'
+ld: module_io.f90:(.text+0x2e6c0): undefined reference to `ext_gr2_write_field_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_io_quilt.o): in function `module_wrf_quilt_mp_quilt_pnc_':
+module_io_quilt.f90:(.text+0x17d5): undefined reference to `ext_pnc_ioinit_'
+ld: module_io_quilt.f90:(.text+0x1820): undefined reference to `ext_gr2_ioinit_'
+ld: module_io_quilt.f90:(.text+0x2609): undefined reference to `ext_pnc_write_field_'
+ld: module_io_quilt.f90:(.text+0x2aaf): undefined reference to `ext_pnc_iosync_'
+ld: module_io_quilt.f90:(.text+0x2d28): undefined reference to `ext_pnc_inquire_filename_'
+ld: module_io_quilt.f90:(.text+0x2d6d): undefined reference to `ext_gr2_inquire_filename_'
+ld: module_io_quilt.f90:(.text+0x2e96): undefined reference to `ext_pnc_open_for_write_commit_'
+ld: module_io_quilt.f90:(.text+0x2eca): undefined reference to `ext_gr2_open_for_write_commit_'
+ld: module_io_quilt.f90:(.text+0x30b6): undefined reference to `ext_pnc_open_for_write_begin_'
+ld: module_io_quilt.f90:(.text+0x30f8): undefined reference to `ext_gr2_open_for_write_begin_'
+ld: module_io_quilt.f90:(.text+0x3290): undefined reference to `ext_pnc_inquire_filename_'
+ld: module_io_quilt.f90:(.text+0x32c2): undefined reference to `ext_pnc_ioclose_'
+ld: module_io_quilt.f90:(.text+0x32f9): undefined reference to `ext_gr2_inquire_filename_'
+ld: module_io_quilt.f90:(.text+0x332b): undefined reference to `ext_gr2_ioclose_'
+ld: module_io_quilt.f90:(.text+0x35d1): undefined reference to `ext_pnc_put_var_ti_char_'
+ld: module_io_quilt.f90:(.text+0x366d): undefined reference to `ext_gr2_put_var_ti_char_'
+ld: module_io_quilt.f90:(.text+0x3974): undefined reference to `ext_pnc_put_dom_ti_char_'
+ld: module_io_quilt.f90:(.text+0x39e3): undefined reference to `ext_gr2_put_dom_ti_char_'
+ld: module_io_quilt.f90:(.text+0x3e58): undefined reference to `ext_pnc_put_dom_ti_integer_'
+ld: module_io_quilt.f90:(.text+0x3eaa): undefined reference to `ext_gr2_put_dom_ti_integer_'
+ld: module_io_quilt.f90:(.text+0x42d6): undefined reference to `ext_pnc_put_dom_td_integer_'
+ld: module_io_quilt.f90:(.text+0x4358): undefined reference to `ext_gr2_put_dom_td_integer_'
+ld: module_io_quilt.f90:(.text+0x47e3): undefined reference to `ext_pnc_put_dom_ti_real_'
+ld: module_io_quilt.f90:(.text+0x483a): undefined reference to `ext_gr2_put_dom_ti_real_'
+ld: module_io_quilt.f90:(.text+0x4c75): undefined reference to `ext_pnc_put_dom_td_real_'
+ld: module_io_quilt.f90:(.text+0x4cf7): undefined reference to `ext_gr2_put_dom_td_real_'
+ld: module_io_quilt.f90:(.text+0x5100): undefined reference to `ext_pnc_ioexit_'
+ld: module_io_quilt.f90:(.text+0x512d): undefined reference to `ext_gr2_ioexit_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_quilt_outbuf_ops.o): in function `module_quilt_outbuf_ops_mp_write_outbuf_pnc_':
+module_quilt_outbuf_ops.f90:(.text+0x972): undefined reference to `ext_pnc_write_field_'
+ld: module_quilt_outbuf_ops.f90:(.text+0xc87): undefined reference to `ext_pnc_start_independent_mode_'
+ld: module_quilt_outbuf_ops.f90:(.text+0xe9d): undefined reference to `ext_pnc_write_field_'
+ld: module_quilt_outbuf_ops.f90:(.text+0x1169): undefined reference to `ext_pnc_end_independent_mode_'
+ld: module_quilt_outbuf_ops.f90:(.text+0x18b9): undefined reference to `ext_pnc_write_field_'
+ld: module_quilt_outbuf_ops.f90:(.text+0x1bc3): undefined reference to `ext_pnc_start_independent_mode_'
+ld: module_quilt_outbuf_ops.f90:(.text+0x1dd3): undefined reference to `ext_pnc_write_field_'
+ld: module_quilt_outbuf_ops.f90:(.text+0x207f): undefined reference to `ext_pnc_end_independent_mode_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/WRFV3/main/libwrflib.a(module_quilt_outbuf_ops.o): in function `module_quilt_outbuf_ops_mp_write_outbuf_':
+module_quilt_outbuf_ops.f90:(.text+0x5cb9): undefined reference to `ext_gr2_write_field_'
+ld: module_quilt_outbuf_ops.f90:(.text+0x64b3): undefined reference to `ext_gr2_write_field_'
+/bin/cp unipost.exe /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/bin
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/unipost'
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/copygb
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/copygb'
+ifort -o copygb.exe copygb.f ../unipost/kinds_mod.o -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3   -Wl,-noinhibit-exec  -L/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib -lip -lbacio -lsp -lw3nco -lw3emc 
+/bin/cp copygb.exe /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/bin
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/copygb'
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/ndate
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/ndate'
+ifort -o ndate.exe ndate.f -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3   -Wl,-noinhibit-exec   /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib/libw3nco.a
+/bin/cp ndate.exe /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/bin
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/ndate'
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/cnvgrib
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/cnvgrib'
+ifort -o cnvgrib.exe gds2gdt.f pds2pdt.f pds2pdtens.f cnvgrib.f cnv12.f cnv22.f cnv21.f gdt2gds.f makepds.f putgbexn.f makepdsens.f setbit.f -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -I../lib/g2    -Wl,-noinhibit-exec   -L/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib -lg2 -lw3nco -lbacio -L/apps/iola_libs/lib -lpng -lz -ljasper
+pds2pdtens.f(2): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [COORDLIST]
+     &                     ipdsnum,ipdstmpl,numcoord,coordlist,
+-----------------------------------------------------^
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib/libg2.a(gbytesc.o): in function `gbyte_':
+gbytesc.f:(.text+0x6c): undefined reference to `mova2i_'
+ld: gbytesc.f:(.text+0xd9): undefined reference to `mova2i_'
+ld: gbytesc.f:(.text+0x103): undefined reference to `mova2i_'
+ld: gbytesc.f:(.text+0x129): undefined reference to `mova2i_'
+ld: gbytesc.f:(.text+0x14f): undefined reference to `mova2i_'
+ld: /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib/libg2.a(gbytesc.o):gbytesc.f:(.text+0x178): more undefined references to `mova2i_' follow
+/bin/cp cnvgrib.exe /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/bin
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/cnvgrib'
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/satgrib2
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/satgrib2'
+ifort -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3       \
+	 -o ../../bin/satgrib2.exe satgrib2.F90 gds2gdt.f -L/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/lib -lnemsio -lsigio -lsfcio -lgfsio -lsp -lw3nco -lw3emc -lbacio -lCRTM  -lg2 -lg2tmpl -lxmlparse -L/apps/iola_libs/lib -lpng -lz -ljasper  
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/satgrib2'
+Making all in /home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/SpcCoeff_Inspect
+make[1]: Entering directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/SpcCoeff_Inspect'
+../lib/crtm2/src/make.rules:51: warning: overriding recipe for target '.F90.o'
+../../configure.upp:136: warning: ignoring old recipe for target '.F90.o'
+../lib/crtm2/src/make.rules:54: warning: overriding recipe for target '.f90.o'
+../../configure.upp:129: warning: ignoring old recipe for target '.f90.o'
+../lib/crtm2/src/make.rules:57: warning: overriding recipe for target '.f.o'
+../../configure.upp:126: warning: ignoring old recipe for target '.f.o'
+ifort -free -o ../../bin/spccoeff_inspect.exe -fp-model precise -ftz -assume byterecl -convert big_endian  -heap-arrays  -DCOMMCODE -DLINUX -DUPPLITTLEENDIAN -O3  -I../lib/crtm2/src/libsrc SpcCoeff_Inspect.f90 -L../../lib/ -lCRTM
+make[1]: Leaving directory '/home/centos/model_build/iola_build/IOLA_repository/sorc/UPP/src/SpcCoeff_Inspect'
